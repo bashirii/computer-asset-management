@@ -1,0 +1,23 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Style your form elements */
+.form-container form {
+    width: 100%; /* Make the form width 100% of the container */
+    max-width: 400px; /* Adjust the max-width as needed */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Center-align form fields if needed */
+.form-container form .form-control {
+    /* Add your form control styles here */
+}

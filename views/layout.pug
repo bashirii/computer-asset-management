@@ -1,0 +1,224 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='x-ua-compatible' content='ie=edge')
+  title Store keeper
+  meta(name='description' content='')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  //
+    favicon
+    ============================================
+  link(rel='shortcut icon' type='image/x-icon' href='img/favicon.ico')
+  //
+    Google Fonts
+    ============================================
+  link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800' rel='stylesheet')
+  //
+    Bootstrap CSS
+    ============================================
+  link(rel='stylesheet' href="css/bootstrap.min.css")
+  //
+    Bootstrap CSS
+    ============================================
+  link(rel='stylesheet' href="css/font-awesome.min.css")
+  //
+    adminpro icon CSS
+    ============================================
+  link(rel='stylesheet' href="css/adminpro-custon-icon.css")
+  //
+    meanmenu icon CSS
+    ============================================
+  link(rel='stylesheet' href="css/meanmenu.min.css")
+  //
+    mCustomScrollbar CSS
+    ============================================
+  link(rel='stylesheet' href="css/jquery.mCustomScrollbar.min.css")
+  //
+    animate CSS
+    ============================================
+  link(rel='stylesheet' href="css/animate.css")
+  //
+    jvectormap CSS
+    ============================================
+  link(rel='stylesheet' href="css/jvectormap/jquery-jvectormap-2.0.3.css")
+  //
+    normalize CSS
+    ============================================
+  link(rel='stylesheet' href="css/data-table/bootstrap-table.css")
+  link(rel='stylesheet' href='css/data-table/bootstrap-editable.css')
+  //
+    normalize CSS
+    ============================================
+  link(rel='stylesheet' href="css/normalize.css")
+  //
+    charts CSS
+    ============================================
+  link(rel='stylesheet' href="css/c3.min.css")
+  //
+    style CSS
+    ============================================
+  link(rel='stylesheet' href="css/style.css")
+  link(rel='stylesheet' href="css/modals.css")
+  //
+    responsive CSS
+    ============================================
+  link(rel='stylesheet' href="css/responsive.css")
+  //
+    modernizr JS
+    ============================================
+  script(src="js/vendor/modernizr-2.8.3.min.js")
+  // Add these lines to your main Blade layout file
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css' rel='stylesheet')
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js')
+//if lt IE 8
+  p.browserupgrade
+    | You are using an 
+    strong outdated
+    |  browser. Please 
+    a(href='http://browsehappy.com/') upgrade your browser
+    |  to improve your experience.
+// Header top area start
+.wrapper-pro
+  .left-sidebar-pro
+    nav#sidebar
+      .sidebar-header
+        a(href='#')
+          img.img-circle(src='img/1.jpg' alt='')
+        h3 STORE
+        p Store Keeper
+        strong AMS
+      .left-custom-menu-adp-wrap
+        ul.nav.navbar-nav.left-sidebar-menu-pro
+          li.active
+            a(href="" role='button' aria-expanded='false')
+              i.fa.big-icon.fa-dashboard
+              span.mini-dn  Dashboard
+
+          li.active
+            a(href="" role='button' aria-expanded='false')
+              i.fa.big-icon.fa-dashboard
+              span.mini-dn  Staffs
+
+          li.active
+            a(href="" role='button' aria-expanded='false')
+              i.fa.big-icon.fa-dashboard
+              span.mini-dn  Conditions
+
+          li.active
+            a(href="" role='button' aria-expanded='false')
+              i.fa.big-icon.fa-dashboard
+              span.mini-dn  Register Asset
+
+          li
+            a(href="" role='button' aria-expanded='false')
+              i.fa.big-icon.fa-folder-open
+              span.mini-dn  Assets
+
+          li
+            a(href="" role='button' aria-expanded='false')
+              i.fa.big-icon.fa-folder-open
+              span.mini-dn  Assign Asset
+
+  // Header top area start
+  .content-inner-all
+    .header-top-area
+      .fixed-header-top
+        .container-fluid
+          .row
+            .col-lg-1.col-md-6.col-sm-6.col-xs-12
+              button#sidebarCollapse.btn.bar-button-pro.header-drl-controller-btn.btn-info.navbar-btn(type='button')
+                i.fa.fa-bars
+              .admin-logo.logo-wrap-pro
+                a(href='#')
+                  img(src='img/logo/log.png' alt='')
+            .col-lg-6.col-md-1.col-sm-1.col-xs-12
+              .header-top-menu.tabl-d-n
+            .col-lg-5.col-md-5.col-sm-6.col-xs-12
+              .header-right-info
+                ul.nav.navbar-nav.mai-top-nav.header-right-menu
+                  li.nav-item
+                    a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown' role='button' aria-expanded='false')
+                      span.adminpro-icon.adminpro-user-rounded.header-riht-inf
+                      span.admin-name Mtoi
+                      span.author-project-icon.adminpro-icon.adminpro-down-arrow
+                    ul.dropdown-header-top.author-log.dropdown-menu.animated.flipInX(role='menu')
+                      li
+                        a(href="{{ route('store.logout" onclick="event.preventDefault();\
+                        document.getElementById('logout-form').submit();")
+                          span.adminpro-icon.adminpro-locked.author-log-ic
+                          | Log
+                          |                                                         Out
+                        form#logout-form.d-none(action="{{ route('store.logout" method='POST')
+            // Header top area end
+
+    block content
+
+// Chat Box Start
+// Chat Box End
+//
+  jquery
+  ============================================
+script(src="js/vendor/jquery-1.11.3.min.js")
+//
+  bootstrap JS
+  ============================================
+script(src="js/bootstrap.min.js")
+//
+  meanmenu JS
+  ============================================
+script(src="js/jquery.meanmenu.js")
+//
+  mCustomScrollbar JS
+  ============================================
+script(src="js/jquery.mCustomScrollbar.concat.min.js")
+//
+  sticky JS
+  ============================================
+script(src="js/jquery.sticky.js")
+//
+  scrollUp JS
+  ============================================
+script(src="js/jquery.scrollUp.min.js")
+//
+  scrollUp JS
+  ============================================
+script(src="js/wow/wow.min.js")
+//
+  counterup JS
+  ============================================
+//
+  jvectormap JS
+  ============================================
+script(src="js/jvectormap/jquery-jvectormap-2.0.2.min.js")
+script(src="js/jvectormap/jquery-jvectormap-world-mill-en.js")
+script(src="js/jvectormap/jvectormap-active.js")
+//
+  peity JS
+  ============================================
+script(src="js/peity/jquery.peity.min.js")
+script(src="js/peity/peity-active.js")
+//
+  sparkline JS
+  ============================================
+script(src="js/sparkline/jquery.sparkline.min.js")
+script(src="js/sparkline/sparkline-active.js")
+//
+  flot JS
+  ============================================
+script(src="js/flot/Chart.min.js")
+script(src="js/flot/dashtwo-flot-active.js")
+//
+  data table JS
+  ============================================
+script(src="js/data-table/bootstrap-table.js")
+script(src="js/data-table/tableExport.js")
+script(src="js/data-table/data-table-active.js")
+script(src="js/data-table/bootstrap-table-editable.js")
+script(src="js/data-table/bootstrap-editable.js")
+script(src="js/data-table/bootstrap-table-resizable.js")
+script(src="js/data-table/colResizable-1.5.source.js")
+script(src="js/data-table/bootstrap-table-export.js")
+//
+  main JS
+  ============================================
+script(src="js/main.js")
