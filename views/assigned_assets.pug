@@ -1,0 +1,67 @@
+extends layouts/_layout.pug
+
+block variables
+	- var activePage = 'assigned assets';
+	- var activeGroup = 'assets';
+
+block title
+	title CAMS
+
+block content
+	.app-title
+		div
+			h1
+				i.bi.bi-table
+				|  Assigned Assets
+			p Table to display assigned assets
+
+		ul.app-breadcrumb.breadcrumb.side
+			li.breadcrumb-item
+				a(href='dashboard' class={'active': activePage == 'dashboard'})
+					i.bi.bi-house-door.fs-6
+
+			li.breadcrumb-item
+				| Assets
+			li.breadcrumb-item.active
+				a(href="#") Assigned Assets
+
+	.row
+		.col-md-12
+			.tile
+				.tile-body
+					.table-responsive
+						table.table.table-hover.table-bordered#sampleTable
+							thead
+								tr
+									th s/n
+									th Serial number
+									th Asset name
+									th Assigned by
+									th Staff assigned
+									th Assigned on
+							tbody
+								tr
+									td 1
+									td 45426667748
+									td Monitor
+									td Michael Mtoi
+									td Bashiri Idd
+									td 2024/07/25
+
+								tr
+									td 3
+									td 454266222
+									td CPU
+									td Michael Mtoi
+									td Hashim Juma
+									td 2011/04/25
+
+
+block specific-js
+	link(rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css")
+	
+	// Data table plugin
+	script(type='text/javascript', src="js/plugins/jquery.dataTables.min.js")
+	script(type='text/javascript', src="js/plugins/dataTables.bootstrap.min.js")
+	script(type='text/javascript').
+		$('#sampleTable').DataTable();

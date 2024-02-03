@@ -1,0 +1,101 @@
+extends layouts/_layout.pug
+
+block variables
+	- var activePage = 'all assets';
+	- var activeGroup = 'assets';
+
+block title
+	title CAMS
+
+block content
+	.app-title
+		div
+			h1
+				i.bi.bi-table
+				|  All Assets
+			//- p Table to display analytical data effectively
+
+		ul.app-breadcrumb.breadcrumb.side
+			li.breadcrumb-item
+				a(href='dashboard' class={'active': activePage == 'dashboard'})
+					i.bi.bi-house-door.fs-6
+
+			li.breadcrumb-item
+				| Assets
+			li.breadcrumb-item.active
+				a(href="#") All Assets
+
+	.row
+		.col-md-12
+			.tile
+				.tile-body
+					.table-responsive
+						table.table.table-hover.table-bordered#sampleTable
+							thead
+								tr
+									th s/n
+									th Serial number
+									th Asset name
+									th Model
+									th Acquisition date
+									th Condition
+									th Status
+									th Action
+							tbody
+								tr
+									td 1
+									td 45426667748
+									td Monitor
+									td DELL
+									td 2024/01/25
+									td New
+									td Assigned
+									td 
+										button.btn.btn-info.text-white(type='button')
+											i.icon.bi.bi-eye-fill
+										button.btn.btn-warning.text-white(type='button')
+											i.icon.bi.bi-pen-fill
+										button.btn.btn-danger(type='button')
+											i.icon.bi.bi-trash-fill
+
+								tr
+									td 2
+									td 76655544111
+									td Mouse
+									td HP
+									td 2023/11/25
+									td Brocken
+									td Not assigned
+									td 
+										button.btn.btn-info.text-white(type='button')
+											i.icon.bi.bi-eye-fill
+										button.btn.btn-warning.text-white(type='button')
+											i.icon.bi.bi-pen-fill
+										button.btn.btn-danger(type='button')
+											i.icon.bi.bi-trash-fill
+
+								tr
+									td 3
+									td 454266222
+									td CPU
+									td DELL
+									td 2011/04/25
+									td Good
+									td Assigned
+									td 
+										button.btn.btn-info.text-white(type='button')
+											i.icon.bi.bi-eye-fill
+										button.btn.btn-warning.text-white(type='button')
+											i.icon.bi.bi-pen-fill
+										button.btn.btn-danger(type='button')
+											i.icon.bi.bi-trash-fill
+
+
+block specific-js
+	link(rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css")
+	
+	// Data table plugin
+	script(type='text/javascript', src="js/plugins/jquery.dataTables.min.js")
+	script(type='text/javascript', src="js/plugins/dataTables.bootstrap.min.js")
+	script(type='text/javascript').
+		$('#sampleTable').DataTable();

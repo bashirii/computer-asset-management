@@ -14,21 +14,21 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.set("view engine", "pug");
 
-// MySQL database configuration
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'bashiri',
-    password: 'Bashiri@2023',
-    database: 'node_cams',
-  });
+// // MySQL database configuration
+// const db = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'bashiri',
+//     password: 'Bashiri@2023',
+//     database: 'node_cams',
+//   });
   
-  db.connect((err) => {
-    if (err) {
-      console.error('Error connecting to MySQL database:', err);
-      return;
-    }
-    console.log('Connected to MySQL database');
-  });
+//   db.connect((err) => {
+//     if (err) {
+//       console.error('Error connecting to MySQL database:', err);
+//       return;
+//     }
+//     console.log('Connected to MySQL database');
+//   });
   
   // Middleware to parse the request body
   app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,37 +36,44 @@ const db = mysql.createConnection({
   // Serve static files (e.g., CSS)
   app.use(express.static('public'));
   
-  // Route for handling form submission
-  app.post('/login', (req, res) => {
-    const { firstname, lastname, email, password } = req.body;
+  // // Route for handling form submission
+  // app.post('/login', (req, res) => {
+  //   const { firstname, lastname, email, password } = req.body;
   
-    // Insert data into the database
-    const sql = 'INSERT INTO admin (firstname, lastname, email, password) VALUES (?, ?, ?, ?)';
-    db.query(sql, [firstname, lastname, email, password], (err, result) => {
-      if (err) {
-        console.error('Error inserting data into the database:', err);
-        return res.status(500).send('Internal Server Error');
-      }
+  //   // Insert data into the database
+  //   const sql = 'INSERT INTO admin (firstname, lastname, email, password) VALUES (?, ?, ?, ?)';
+  //   db.query(sql, [firstname, lastname, email, password], (err, result) => {
+  //     if (err) {
+  //       console.error('Error inserting data into the database:', err);
+  //       return res.status(500).send('Internal Server Error');
+  //     }
   
-      console.log('Data inserted into the database:', result);
-      //res.status(200).send('Login successful');
-      res.redirect("/login");
-    });
-  });
+  //     console.log('Data inserted into the database:', result);
+  //     //res.status(200).send('Login successful');
+  //     res.redirect("/login");
+  //   });
+  // });
 
 app.get('/', function (req, res) { // Fix parentheses to curly braces
     res.render('index');
 });
 
-app.get('/login', function (req, res) { // Fix parentheses to curly braces
-    res.render('login');
+app.get('/dashboard', function (req, res) { // Fix parentheses to curly braces
+  res.render('dashboard');
 });
-app.get('/contact', function (req, res) { // Fix parentheses to curly braces
-    res.render('contact');
+
+app.get('/assets', function (req, res) { // Fix parentheses to curly braces
+    res.render('assets');
 });
-app.get('/about', function (req, res) { // Fix parentheses to curly braces
-    res.render('about');
+
+app.get('/staffs', function (req, res) { // Fix parentheses to curly braces
+    res.render('staffs');
 });
-app.get('/dashboard', (req, res) => {
-  res.render('dashboard'); // Assuming your dashboard page is in a file named 'dashboard.pug'
+
+app.get('/assigned_assets', function (req, res) { // Fix parentheses to curly braces
+    res.render('assigned_assets');
+});
+
+app.get('/assign_asset', (req, res) => {
+  res.render('assign_asset'); // Assuming your dashboard page is in a file named 'dashboard.pug'
 });

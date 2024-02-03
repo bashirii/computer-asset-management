@@ -1,0 +1,93 @@
+extends layouts/_layout.pug
+
+block variables
+	- var activePage = 'all staffs';
+	- var activeGroup = 'staffs';
+
+block title
+	title CAMS
+
+block content
+	.app-title
+		div
+			h1
+				i.bi.bi-table
+				|  All Staffs
+			//- p Table to display analytical data effectively
+
+		ul.app-breadcrumb.breadcrumb.side
+			li.breadcrumb-item
+				a(href='dashboard' class={'active': activePage == 'dashboard'})
+					i.bi.bi-house-door.fs-6
+
+			li.breadcrumb-item
+				| Staffs
+			li.breadcrumb-item.active
+				a(href="#") All Staffs
+
+	.row
+		.col-md-12
+			.tile
+				.tile-body
+					.table-responsive
+						table.table.table-hover.table-bordered#sampleTable
+							thead
+								tr
+									th s/n
+									th Full name
+									th Email
+									th Phone number
+									th Position
+									th Action
+							tbody
+								tr
+									td 1
+									td Michael Mtoi
+									td michael$gmail.com
+									td 0678786533
+									td Admin
+									td 
+										button.btn.btn-info.text-white(type='button')
+											i.icon.bi.bi-eye-fill
+										button.btn.btn-warning.text-white(type='button')
+											i.icon.bi.bi-pen-fill
+										button.btn.btn-danger(type='button')
+											i.icon.bi.bi-trash-fill
+
+								tr
+									td 2
+									td Bashiri Idd
+									td bashiri@gmil.com
+									td 0756545212
+									td Staff
+									td 
+										button.btn.btn-info.text-white(type='button')
+											i.icon.bi.bi-eye-fill
+										button.btn.btn-warning.text-white(type='button')
+											i.icon.bi.bi-pen-fill
+										button.btn.btn-danger(type='button')
+											i.icon.bi.bi-trash-fill
+
+								tr
+									td 3
+									td Hashim Juma
+									td hashim@gmail.com
+									td 9712456787
+									td Staff
+									td 
+										button.btn.btn-info.text-white(type='button')
+											i.icon.bi.bi-eye-fill
+										button.btn.btn-warning.text-white(type='button')
+											i.icon.bi.bi-pen-fill
+										button.btn.btn-danger(type='button')
+											i.icon.bi.bi-trash-fill
+
+
+block specific-js
+	link(rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css")
+	
+	// Data table plugin
+	script(type='text/javascript', src="js/plugins/jquery.dataTables.min.js")
+	script(type='text/javascript', src="js/plugins/dataTables.bootstrap.min.js")
+	script(type='text/javascript').
+		$('#sampleTable').DataTable();

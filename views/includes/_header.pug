@@ -1,0 +1,19 @@
+header.app-header
+	a.app-header__logo(href='index.html') CAMS
+
+	// Sidebar toggle button
+	a.app-sidebar__toggle(href='#', data-toggle='sidebar', aria-label="Hide Sidebar")
+
+	// Navbar Right Menu
+	ul.app-nav
+
+		// User Menu
+		li.dropdown
+			a.app-nav__item(href='#', data-bs-toggle='dropdown' aria-label="Open Profile Menu")
+				i.bi.bi-person.fs-4
+			ul.dropdown-menu.settings-menu.dropdown-menu-right
+		
+				li
+					a.dropdown-item(href='page-login.html')
+						i.bi.bi-box-arrow-right.me-2.fs-5
+						|  Logout

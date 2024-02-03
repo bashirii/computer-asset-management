@@ -1,1 +1,7 @@
-Computer Asset Management 
+Computer Asset Management
+
+## Getting started
+
+Run a `npm install` command in project root directory to install and build dependencies.
+
+Use `npm run start` or `node server.js` command to start a development server using NodeJs.

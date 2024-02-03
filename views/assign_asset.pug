@@ -1,0 +1,85 @@
+extends layouts/_layout.pug
+
+block variables
+	- var activePage = 'assign asset';
+	- var activeGroup = 'assets';
+
+block title
+	title CAMS
+
+block content
+	.app-title
+		div
+			h1
+				i.bi.bi-table
+				|  Assign Assets
+			p Table to display un-assigned assets
+
+		ul.app-breadcrumb.breadcrumb.side
+			li.breadcrumb-item
+				a(href='dashboard' class={'active': activePage == 'dashboard'})
+					i.bi.bi-house-door.fs-6
+
+			li.breadcrumb-item
+				| Assets
+			li.breadcrumb-item.active
+				a(href="#") Assign Assets
+
+	.row
+		.col-md-12
+			.tile
+				.tile-body
+					.table-responsive
+						table.table.table-hover.table-bordered#sampleTable
+							thead
+								tr
+									th s/n
+									th Serial number
+									th Asset name
+									th Model
+									th Acquisition date
+									th Condition
+									th Action
+							tbody
+								tr
+									td 1
+									td ADA1267621
+									td Laptop
+									td Mac
+									td 2024/02/01
+									td New
+									td 
+										button.btn.btn-info.text-primary.text-white(type='button')
+											i.icon.bi.bi-send-fill
+
+								tr
+									td 2
+									td 5678D45622
+									td Mouse
+									td ASAS
+									td 2023/12/25
+									td Good
+									td 
+										button.btn.btn-info.text-primary.text-white(type='button')
+											i.icon.bi.bi-send-fill
+
+								tr
+									td 3
+									td D4562362G12
+									td Monitor
+									td Mac
+									td 2023/04/25
+									td Good
+									td 
+										button.btn.btn-info.text-primary.text-white(type='button')
+											i.icon.bi.bi-send-fill
+
+
+block specific-js
+	link(rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css")
+	
+	// Data table plugin
+	script(type='text/javascript', src="js/plugins/jquery.dataTables.min.js")
+	script(type='text/javascript', src="js/plugins/dataTables.bootstrap.min.js")
+	script(type='text/javascript').
+		$('#sampleTable').DataTable();
