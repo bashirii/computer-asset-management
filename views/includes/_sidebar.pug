@@ -13,14 +13,14 @@ aside.app-sidebar
 				i.app-menu__icon.bi.bi-speedometer
 				span.app-menu__label Dashboard
 
-		li.treeview(class={'is-expanded': activeGroup == 'forms'})
+		li.treeview(class={'is-expanded': activeGroup == 'staffs'})
 			a.app-menu__item(href='#' data-toggle='treeview')
 				i.app-menu__icon.bi.bi-people
 				span.app-menu__label Staffs
 				i.treeview-indicator.bi.bi-chevron-right
 			ul.treeview-menu
 				li
-					a.treeview-item(href='#' class={'active': activePage == 'form-components'})
+					a.treeview-item(href='#' class={'active': activePage == 'add staff'})
 						i.icon.bi.bi-person-plus
 						|  Add Staff
 				li
@@ -28,22 +28,37 @@ aside.app-sidebar
 						i.icon.bi.bi-table
 						|  All Staffs
 		
-		li.treeview(class={'is-expanded': activeGroup == 'ui-elements'})
+		li.treeview(class={'is-expanded': activeGroup == 'conditions'})
+			a.app-menu__item(href='#', data-toggle='treeview')
+				i.app-menu__icon.bi.bi-cloud
+				span.app-menu__label Conditions
+				i.treeview-indicator.bi.bi-chevron-right
+			ul.treeview-menu
+				li
+					a.treeview-item(href='#' class={'active': activePage == 'add condition'})
+						i.icon.bi.bi-cloud-plus
+						|  Add Condition
+				li
+					a.treeview-item(href='conditions' class={'active': activePage == 'all conditions'})
+						i.icon.bi.bi-clouds
+						|  All Conditions
+
+		li.treeview(class={'is-expanded': activeGroup == 'assets'})
 			a.app-menu__item(href='#', data-toggle='treeview')
 				i.app-menu__icon.bi.bi-laptop
 				span.app-menu__label Assets
 				i.treeview-indicator.bi.bi-chevron-right
 			ul.treeview-menu
 				li
-					a.treeview-item(href='#' class={'active': activePage == 'ui-bootstrap'})
+					a.treeview-item(href='#' class={'active': activePage == 'add asset'})
 						i.icon.bi.bi-plus-circle
 						|  Register Asset
 				li
-					a.treeview-item(href='assets' class={'active': activePage == 'Assets'})
+					a.treeview-item(href='assets' class={'active': activePage == 'assets'})
 						i.icon.bi.bi-table
 						|  All assets
 
-		li.treeview(class={'is-expanded': activeGroup == 'pages'})
+		li.treeview(class={'is-expanded': activeGroup == 'assignment'})
 			a.app-menu__item(href='#' data-toggle='treeview')
 				i.app-menu__icon.bi.bi-file-earmark-text
 				span.app-menu__label Asset Assignments
