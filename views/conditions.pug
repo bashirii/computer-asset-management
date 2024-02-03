@@ -37,37 +37,26 @@ block content
 									th Condition name
 									th Action
 							tbody
-								tr
-									td 1
-									td New
-									td 
-										button.btn.btn-warning.text-white(type='button')
-											i.icon.bi.bi-pen-fill
-										button.btn.btn-danger(type='button')
-											i.icon.bi.bi-trash-fill
+								if conditions.length
+									each condition, index in conditions
+										tr
+											td #{index + 1}
+											td #{condition.Condition_name}
+											td
+												button.btn.btn-warning.text-white(type='button')
+													i.icon.bi.bi-pen-fill
 
-								tr
-									td 2
-									td Good
-									td 
-										button.btn.btn-warning.text-white(type='button')
-											i.icon.bi.bi-pen-fill
-										button.btn.btn-danger(type='button')
-											i.icon.bi.bi-trash-fill
+												button.btn.btn-danger(type='button')
+													i.icon.bi.bi-trash-fill
 
-								tr
-									td 3
-									td Broken
-									td 
-										button.btn.btn-warning.text-white(type='button')
-											i.icon.bi.bi-pen-fill
-										button.btn.btn-danger(type='button')
-											i.icon.bi.bi-trash-fill
+								else
+									tr
+										td(colspan='3') No Conditions found.	
 
 
 block specific-js
 	link(rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css")
-	
+
 	// Data table plugin
 	script(type='text/javascript', src="js/plugins/jquery.dataTables.min.js")
 	script(type='text/javascript', src="js/plugins/dataTables.bootstrap.min.js")

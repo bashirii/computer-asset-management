@@ -40,26 +40,24 @@ block content
 									th Staff assigned
 									th Assigned on
 							tbody
-								tr
-									td 1
-									td 45426667748
-									td Monitor
-									td Michael Mtoi
-									td Bashiri Idd
-									td 2024/07/25
+								if assignments.length
+									each assignment, index in assignments
+										tr
+											td #{index + 1}
+											td #{assignment.SerialNo}
+											td #{assignment.AssetName}
+											td #{assignment.Admin}
+											td #{assignment.Staff}
+											td #{assignment.AssignDate}
 
-								tr
-									td 3
-									td 454266222
-									td CPU
-									td Michael Mtoi
-									td Hashim Juma
-									td 2011/04/25
+								else
+									tr
+										td(colspan='6') No Assignment records found.
 
 
 block specific-js
 	link(rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css")
-	
+
 	// Data table plugin
 	script(type='text/javascript', src="js/plugins/jquery.dataTables.min.js")
 	script(type='text/javascript', src="js/plugins/dataTables.bootstrap.min.js")

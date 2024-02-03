@@ -40,52 +40,36 @@ block content
 									th Position
 									th Action
 							tbody
-								tr
-									td 1
-									td Michael Mtoi
-									td michael$gmail.com
-									td 0678786533
-									td Admin
-									td 
-										button.btn.btn-info.text-white(type='button')
-											i.icon.bi.bi-eye-fill
-										button.btn.btn-warning.text-white(type='button')
-											i.icon.bi.bi-pen-fill
-										button.btn.btn-danger(type='button')
-											i.icon.bi.bi-trash-fill
+								if staffs.length
+									each staff, index in staffs
+										tr
+											td #{index + 1}
+											td #{staff.First_name} #{staff.Last_name} 
+											td #{staff.Email}
+											td #{staff.Phone_no}
 
-								tr
-									td 2
-									td Bashiri Idd
-									td bashiri@gmil.com
-									td 0756545212
-									td Staff
-									td 
-										button.btn.btn-info.text-white(type='button')
-											i.icon.bi.bi-eye-fill
-										button.btn.btn-warning.text-white(type='button')
-											i.icon.bi.bi-pen-fill
-										button.btn.btn-danger(type='button')
-											i.icon.bi.bi-trash-fill
+											if staff.Role == 1
+												td Admin
 
-								tr
-									td 3
-									td Hashim Juma
-									td hashim@gmail.com
-									td 9712456787
-									td Staff
-									td 
-										button.btn.btn-info.text-white(type='button')
-											i.icon.bi.bi-eye-fill
-										button.btn.btn-warning.text-white(type='button')
-											i.icon.bi.bi-pen-fill
-										button.btn.btn-danger(type='button')
-											i.icon.bi.bi-trash-fill
+											else
+												td Staff
+
+											td 
+												button.btn.btn-info.text-white(type='button')
+													i.icon.bi.bi-eye-fill
+												button.btn.btn-warning.text-white(type='button')
+													i.icon.bi.bi-pen-fill
+												button.btn.btn-danger(type='button')
+													i.icon.bi.bi-trash-fill
+
+								else
+									tr
+										td(colspan='6') No Staffs found.	
 
 
 block specific-js
 	link(rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css")
-	
+
 	// Data table plugin
 	script(type='text/javascript', src="js/plugins/jquery.dataTables.min.js")
 	script(type='text/javascript', src="js/plugins/dataTables.bootstrap.min.js")

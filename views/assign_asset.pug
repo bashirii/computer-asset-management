@@ -39,45 +39,31 @@ block content
 									th Model
 									th Acquisition date
 									th Condition
+									th Status
 									th Action
 							tbody
-								tr
-									td 1
-									td ADA1267621
-									td Laptop
-									td Mac
-									td 2024/02/01
-									td New
-									td 
-										button.btn.btn-info.text-primary.text-white(type='button')
-											i.icon.bi.bi-send-fill
+								if assets.length
+									each asset, index in assets
+										tr
+											td #{index + 1}
+											td #{asset.Serial_no}
+											td #{asset.AssetName}
+											td #{asset.Model}
+											td #{asset.AcquisitionDate}
+											td #{asset.ConditionName}
+											td #{asset.Status}
+											td 
+												button.btn.btn-info.text-primary.text-white(type='button')
+													i.icon.bi.bi-send-fill
 
-								tr
-									td 2
-									td 5678D45622
-									td Mouse
-									td ASAS
-									td 2023/12/25
-									td Good
-									td 
-										button.btn.btn-info.text-primary.text-white(type='button')
-											i.icon.bi.bi-send-fill
-
-								tr
-									td 3
-									td D4562362G12
-									td Monitor
-									td Mac
-									td 2023/04/25
-									td Good
-									td 
-										button.btn.btn-info.text-primary.text-white(type='button')
-											i.icon.bi.bi-send-fill
+								else
+									tr
+										td(colspan='8') No Assets found.
 
 
 block specific-js
 	link(rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css")
-	
+
 	// Data table plugin
 	script(type='text/javascript', src="js/plugins/jquery.dataTables.min.js")
 	script(type='text/javascript', src="js/plugins/dataTables.bootstrap.min.js")
