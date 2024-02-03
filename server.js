@@ -19,7 +19,7 @@ app.set("view engine", "pug");
 //     host: 'localhost',
 //     user: 'root',
 //     password: '',
-//     database: 'cams_db',
+//     database: 'coms_db',
 //   });
   
 //   db.connect((err) => {
