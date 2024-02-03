@@ -62,12 +62,16 @@ app.get('/dashboard', function (req, res) { // Fix parentheses to curly braces
   res.render('dashboard');
 });
 
-app.get('/assets', function (req, res) { // Fix parentheses to curly braces
-    res.render('assets');
+app.get('/conditions', function (req, res) { // Fix parentheses to curly braces
+  res.render('conditions');
 });
 
 app.get('/staffs', function (req, res) { // Fix parentheses to curly braces
     res.render('staffs');
+});
+
+app.get('/assets', function (req, res) { // Fix parentheses to curly braces
+    res.render('assets');
 });
 
 app.get('/assigned_assets', function (req, res) { // Fix parentheses to curly braces

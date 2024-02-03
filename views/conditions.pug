@@ -1,0 +1,75 @@
+extends layouts/_layout.pug
+
+block variables
+	- var activePage = 'all conditions';
+	- var activeGroup = 'conditions';
+
+block title
+	title CAMS
+
+block content
+	.app-title
+		div
+			h1
+				i.bi.bi-table
+				|  All Conditions
+			p Table to display assets conditions
+
+		ul.app-breadcrumb.breadcrumb.side
+			li.breadcrumb-item
+				a(href='dashboard' class={'active': activePage == 'dashboard'})
+					i.bi.bi-house-door.fs-6
+
+			li.breadcrumb-item
+				| Conditions
+			li.breadcrumb-item.active
+				a(href="#") All Conditions
+
+	.row
+		.col-md-12
+			.tile
+				.tile-body
+					.table-responsive
+						table.table.table-hover.table-bordered#sampleTable
+							thead
+								tr
+									th s/n
+									th Condition name
+									th Action
+							tbody
+								tr
+									td 1
+									td New
+									td 
+										button.btn.btn-warning.text-white(type='button')
+											i.icon.bi.bi-pen-fill
+										button.btn.btn-danger(type='button')
+											i.icon.bi.bi-trash-fill
+
+								tr
+									td 2
+									td Good
+									td 
+										button.btn.btn-warning.text-white(type='button')
+											i.icon.bi.bi-pen-fill
+										button.btn.btn-danger(type='button')
+											i.icon.bi.bi-trash-fill
+
+								tr
+									td 3
+									td Broken
+									td 
+										button.btn.btn-warning.text-white(type='button')
+											i.icon.bi.bi-pen-fill
+										button.btn.btn-danger(type='button')
+											i.icon.bi.bi-trash-fill
+
+
+block specific-js
+	link(rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css")
+	
+	// Data table plugin
+	script(type='text/javascript', src="js/plugins/jquery.dataTables.min.js")
+	script(type='text/javascript', src="js/plugins/dataTables.bootstrap.min.js")
+	script(type='text/javascript').
+		$('#sampleTable').DataTable();
