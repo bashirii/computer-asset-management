@@ -17,9 +17,9 @@ app.set("view engine", "pug");
 // // MySQL database configuration
 // const db = mysql.createConnection({
 //     host: 'localhost',
-//     user: 'bashiri',
-//     password: 'Bashiri@2023',
-//     database: 'node_cams',
+//     user: 'root',
+//     password: '',
+//     database: 'cams_db',
 //   });
   
 //   db.connect((err) => {
