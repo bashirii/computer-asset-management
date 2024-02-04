@@ -9,7 +9,7 @@ aside.app-sidebar
 
 	ul.app-menu
 		li
-			a.app-menu__item(href='dashboard.html' class={'active': activePage == 'dashboard'})
+			a.app-menu__item(href='dashboard' class={'active': activePage == 'dashboard'})
 				i.app-menu__icon.bi.bi-speedometer
 				span.app-menu__label Dashboard
 
@@ -27,7 +27,7 @@ aside.app-sidebar
 					a.treeview-item(href='staffs' class={'active': activePage == 'all staffs'})
 						i.icon.bi.bi-table
 						|  All Staffs
-		
+
 		li.treeview(class={'is-expanded': activeGroup == 'conditions'})
 			a.app-menu__item(href='#', data-toggle='treeview')
 				i.app-menu__icon.bi.bi-cloud
@@ -50,7 +50,7 @@ aside.app-sidebar
 				i.treeview-indicator.bi.bi-chevron-right
 			ul.treeview-menu
 				li
-					a.treeview-item(href='#' class={'active': activePage == 'add asset'})
+					a.treeview-item(href='add_asset' class={'active': activePage == 'add asset'})
 						i.icon.bi.bi-plus-circle
 						|  Register Asset
 				li
@@ -72,4 +72,3 @@ aside.app-sidebar
 					a.treeview-item(href='assigned_assets' class={'active': activePage == 'assigned assets'})
 						i.icon.bi.bi-file-text
 						|  Assignment records
-				

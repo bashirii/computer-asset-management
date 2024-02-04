@@ -42,58 +42,32 @@ block content
 									th Status
 									th Action
 							tbody
-								tr
-									td 1
-									td 45426667748
-									td Monitor
-									td DELL
-									td 2024/01/25
-									td New
-									td Assigned
-									td 
-										button.btn.btn-info.text-white(type='button')
-											i.icon.bi.bi-eye-fill
-										button.btn.btn-warning.text-white(type='button')
-											i.icon.bi.bi-pen-fill
-										button.btn.btn-danger(type='button')
-											i.icon.bi.bi-trash-fill
+								if assets.length
+									each asset, index in assets
+										tr
+											td #{index + 1}
+											td #{asset.Serial_no}
+											td #{asset.AssetName}
+											td #{asset.Model}
+											td #{asset.AcquisitionDate}
+											td #{asset.ConditionName}
+											td #{asset.Status}
+											td 
+												button.btn.btn-info.text-white(type='button')
+													i.icon.bi.bi-eye-fill
+												button.btn.btn-warning.text-white(type='button')
+													i.icon.bi.bi-pen-fill
+												button.btn.btn-danger(type='button')
+													i.icon.bi.bi-trash-fill
 
-								tr
-									td 2
-									td 76655544111
-									td Mouse
-									td HP
-									td 2023/11/25
-									td Brocken
-									td Not assigned
-									td 
-										button.btn.btn-info.text-white(type='button')
-											i.icon.bi.bi-eye-fill
-										button.btn.btn-warning.text-white(type='button')
-											i.icon.bi.bi-pen-fill
-										button.btn.btn-danger(type='button')
-											i.icon.bi.bi-trash-fill
-
-								tr
-									td 3
-									td 454266222
-									td CPU
-									td DELL
-									td 2011/04/25
-									td Good
-									td Assigned
-									td 
-										button.btn.btn-info.text-white(type='button')
-											i.icon.bi.bi-eye-fill
-										button.btn.btn-warning.text-white(type='button')
-											i.icon.bi.bi-pen-fill
-										button.btn.btn-danger(type='button')
-											i.icon.bi.bi-trash-fill
+								else
+									tr
+										td(colspan='8') No Assets found.	
 
 
 block specific-js
 	link(rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css")
-	
+
 	// Data table plugin
 	script(type='text/javascript', src="js/plugins/jquery.dataTables.min.js")
 	script(type='text/javascript', src="js/plugins/dataTables.bootstrap.min.js")
