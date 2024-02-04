@@ -4,4 +4,8 @@ Computer Asset Management
 
 Run a `npm install` command in project root directory to install and build dependencies.
 
+Use `npm run dev` command to watch and compile source files.
+
+Use `npm run build` command to compile all source files.
+
 Use `npm run start` or `node server.js` command to start a development server using NodeJs.
