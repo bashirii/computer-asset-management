@@ -1,0 +1,87 @@
+extends layouts/_layout.pug
+
+block variables
+  - var activePage = 'add asset';
+  - var activeGroup = 'assets';
+
+block title
+  title CAMS
+
+block content
+  .app-title
+    div
+      h1
+      i.bi.bi-table
+      |  Register Assets
+      //- p Table to display analytical data effectively
+
+    ul.app-breadcrumb.breadcrumb.side
+      li.breadcrumb-item
+        a(href='dashboard' class={'active': activePage == 'dashboard'})
+        i.bi.bi-house-door.fs-6
+
+      li.breadcrumb-item
+      | Assets
+
+      li.breadcrumb-item.active
+        a(href="#") Register Assets
+
+  .row
+    .col-md-12
+      .tile
+        //- h3.tile-title Vertical Form
+        .tile-body
+        form
+        .row
+          .col-md-4
+            .mb-3
+            label.form-label Asset Serial number
+            input.form-control(type="text", placeholder="Enter Serial number")
+          .col-md-8
+            .mb-3
+            label.form-label Asset Name
+            input.form-control(type="text", placeholder="Enter asset name")
+
+        .row
+          .col-md-6
+            .mb-3
+            label.form-label Asset Model
+            input.form-control(type="text", placeholder="Enter asset model")
+          .col-md-6
+            .mb-3
+            label.form-label Acquisition date
+            input.form-control(type="date", placeholder="Enter Acquisition date")
+
+        .row.mb-3
+          .col-md-6
+            .mb-3
+            label.form-label Status
+            .form-check
+              label.form-check-label
+              input.form-check-input(type='radio', name="gender" value="In use")
+              | In use
+            .form-check
+              label.form-check-label
+              input.form-check-input(type='radio', name="gender", value="Not in use")
+              | Not in use
+          .col-md-6
+            .mb-3
+            label.form-label Acquisition date
+            select.form-control(name='ConditionID')
+              option.selected(value='#{condition.ConditionID}') Select Asset Condition
+
+              if conditions.length
+                each condition, index in conditions
+                  option(value='') #{condition.Condition_name}
+
+              else
+                option(value='') No Asset Conditions found
+
+        .tile-footer
+        //- a.btn.btn-secondary(href="#")
+        //-   i.bi.bi-x-circle-fill.me-2
+        //-   | Reset
+        //- | &nbsp;&nbsp;&nbsp;
+        button.btn.btn-primary(type='button')
+          i.bi.bi-check-circle-fill.me-2
+          | Register

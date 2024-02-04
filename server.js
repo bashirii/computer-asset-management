@@ -27,7 +27,6 @@ db.connect((err) => {
 
 });
 
-
 // Express functionalities
 app.use(bodyParser.json());
 
@@ -92,6 +91,8 @@ app.get('/conditions', async (req, res) => {
 
 });
 
+
+
 app.get('/staffs', async (req, res) => { // Fix parentheses to curly braces
   try {
     await new Promise((resolve, reject) => {
@@ -115,6 +116,31 @@ app.get('/staffs', async (req, res) => { // Fix parentheses to curly braces
     res.sendStatus(500);
   }
 
+});
+
+app.get('/add_asset', async (req, res) => {
+  try {
+    await new Promise((resolve, reject) => {
+      db.connect((err) => {
+        if (err) reject(err);
+        const query = 'SELECT * FROM conditions';
+
+        db.query(query, (error, results, fields) => {
+          if (error) reject(error);
+          res.render('add_asset', { conditions: results });
+
+          resolve({ conditions: results, fields: fields });
+        });
+
+        db.end();
+      });
+    });
+
+  } catch (err) {
+    console.error(err.red);
+    res.sendStatus(500);
+  }
+  
 });
 
 app.get('/assets',  async (req, res) => { // Fix parentheses to curly braces
